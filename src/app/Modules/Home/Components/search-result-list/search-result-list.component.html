@@ -1,0 +1,7 @@
+<div cdkDropList class="list" (cdkDropListDropped)="drop($event)" *ngIf="charactersArray.length > 0 && !charctersloader">
+    <app-character-card *ngFor="let character of charactersArray" [characterData]="character" cdkDrag></app-character-card>
+</div>
+<mat-spinner diameter="20" *ngIf="charctersloader"></mat-spinner>
+<div class="no-result" *ngIf="charactersArray.length <= 0 && !charctersloader && searchTxt">
+    Sorry there's no result for your search
+</div>

@@ -1,6 +1,8 @@
 # SearchTask
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.2.
+This project for getting characters by searching for their name via a search input, also you can drag and drop
+characters cards to reorder it
 
 ## Development server
 
@@ -10,9 +12,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build and Deploy
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+After building, upload your `dist/` directory to your host
 
 ## Running unit tests
 

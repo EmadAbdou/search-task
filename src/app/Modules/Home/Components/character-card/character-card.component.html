@@ -1,0 +1,10 @@
+<mat-card *ngIf="characterData">
+    <mat-card-header>
+        <mat-card-title>{{ characterData.name }}</mat-card-title>
+        <mat-card-subtitle>Height: {{ characterData.height}} cm</mat-card-subtitle>
+        <mat-card-subtitle>Homeworld: {{ characterData.homeworld}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+        <button mat-flat-button color="primary" (click)="visitCharacterProfile(characterData.url)">Profile Link</button>
+    </mat-card-actions>
+</mat-card>

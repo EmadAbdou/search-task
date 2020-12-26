@@ -1,0 +1,15 @@
+mat-card {
+    text-align: start;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8%;
+    cursor: pointer;
+    mat-card-title {
+        margin-bottom: 1em;
+    }
+    mat-card-subtitle {
+        margin-bottom: 0.5em;
+    }
+    mat-card-actions {
+        padding-inline-start: .5em;
+    }
+}
