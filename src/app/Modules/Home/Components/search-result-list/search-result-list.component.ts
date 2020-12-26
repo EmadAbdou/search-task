@@ -22,11 +22,7 @@ export class SearchResultListComponent implements OnInit {
   ngOnInit(): void {
     this.searchService.searchTextSubject.subscribe(searchValue => {
       this.searchTxt = searchValue;
-      if (searchValue !== '') {
-        this.getCharacters(searchValue);
-      } else {
-        this.charactersArray = [];
-      }
+      this.getCharacters(searchValue);
     })
   }
 
@@ -39,7 +35,13 @@ export class SearchResultListComponent implements OnInit {
         debounceTime(300),
         map(res => {
           const characters: Character[] = res['results'];
-          return characters;
+          if (characters.length > 0) {
+            return characters;
+          } else {
+            this.charactersArray = [];
+            this.charctersloader = false;
+            return [];
+          }
         }),
         mergeMap(characters => forkJoin(characters.map((character) => this.searchService.getCharacterHomeworld(character['homeworld'])
           .pipe(map(homeworldRes => {
